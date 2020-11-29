@@ -11,7 +11,7 @@ namespace QLĐT.DataAccessLayer.Interface
     class DienThoaiDAL : IDienThoaiDAL
     {
         //Xác định đường dẫn của tệp dữ liệu DienThoai.txt
-        private string txtfile = @"D:\ĐỒ ÁN 1\QLĐT\Data/DienThoai.txt";
+        private string txtfile = @"D:\ĐỒ ÁN 1\QLĐT\QLĐT\Data/DienThoai.txt";
         //Lấy toàn bộ dữ liệu có trong file DienThoai.txt đưa vào một danh sách 
         public List<DienThoai> GetAllDienThoai()
         {
@@ -33,10 +33,10 @@ namespace QLĐT.DataAccessLayer.Interface
         //Chèn một bản ghi điện thoại vào tệp
         public void ThemDienThoai(DienThoai dt)
         {
-            string madienthoai = "DT" + DateTime.Now.ToString("yyMMddhhmmss");
+            //string madienthoai = "DT" + DateTime.Now.ToString("yyMMddhhmmss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(madienthoai + "#" + dt.TenDienThoai + "#" + dt.DonGia);
+            fwrite.Write(dt.MaDienThoai + "#" + dt.TenDienThoai + "#" + dt.DonGia);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
