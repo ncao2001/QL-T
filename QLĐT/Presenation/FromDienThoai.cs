@@ -63,33 +63,33 @@ namespace QLĐT.Presenation
             {
                 Console.Clear();
                 Console.WriteLine("QUAN LY THONG TIN DIEN THOAI");
-                Console.WriteLine(" F1.Nhap dien thoai ");
-                Console.WriteLine(" F2.Sua dien thoai ");
-                Console.WriteLine(" F3.Xoa dien thoai ");
-                Console.WriteLine(" F4.Hien danh sach ");
-                Console.WriteLine(" F5.Kim kiem ");
-                Console.WriteLine(" F6.Back ");
+                Console.WriteLine(" 1.Nhap dien thoai ");
+                Console.WriteLine(" 2.Sua dien thoai ");
+                Console.WriteLine(" 3.Xoa dien thoai ");
+                Console.WriteLine(" 4.Hien danh sach ");
+                Console.WriteLine(" 5.Kim kiem ");
+                Console.WriteLine(" 6.Back ");
                 ConsoleKeyInfo kt = Console.ReadKey();
-                switch (kt.Key)
+                switch (kt.KeyChar)
                 {
-                    case ConsoleKey.F1:
+                    case '1':
                         Nhap();
                         Hien();
                         Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                         Console.ReadKey();
                         break;
-                    case ConsoleKey.F4:
+                    case '4':
                         Hien();
                         Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                         Console.ReadKey();
                         break;
-                    case ConsoleKey.F2:
+                    case '2':
                         Sua();
                         Hien();
                         Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                         Console.ReadKey();
                         break;
-                    case ConsoleKey.F6:
+                    case '6':
                         Program.Menu();
                         break;
                 }

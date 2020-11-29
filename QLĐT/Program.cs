@@ -14,19 +14,19 @@ namespace QLĐT
             do
             {
                 Console.Clear();
-                Console.WriteLine(" F1.Quan ly khach hang ");
-                Console.WriteLine(" F2.Quan ly dien thoai ");
-                Console.WriteLine(" F3.Quan ly hoa don ");
-                Console.WriteLine(" F4.Bao cao/Thong ke ");
-                Console.WriteLine(" F5.Ket thuc ");
+                Console.WriteLine(" 1.Quan ly khach hang ");
+                Console.WriteLine(" 2.Quan ly dien thoai ");
+                Console.WriteLine(" 3.Quan ly hoa don ");
+                Console.WriteLine(" 4.Bao cao/Thong ke ");
+                Console.WriteLine(" 5.Ket thuc ");
                 ConsoleKeyInfo kt = Console.ReadKey();
-                switch (kt.Key)
+                switch (kt.KeyChar)
                 {
-                    case ConsoleKey.F1:
+                    case '1':
                         FromDienThoai frm = new FromDienThoai();
                         frm.Menu();
                         break;
-                    case ConsoleKey.F5:
+                    case '5':
                         Environment.Exit(0);
                         break;
                 }
