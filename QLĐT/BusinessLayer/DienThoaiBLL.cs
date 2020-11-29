@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QLĐT.Entities;
-using QLĐT.DataAccessLayer;
+using QLĐT.DataAccessLayer.Interface ;
 
-namespace QLĐT.BusinessLayer
+namespace QLĐT.BusinessLayer.Interface
 {
     //Thực thi các yêu cầu nghiệm vụ của bài toán đã được quy định tại IDienThoaiBLL
     public class DienThoaiBLL : IDienThoaiBLL
     {
-        private IDienThoaiDAL dtDA = new DienThoaiDAL();
+        private IDienThoaiDAL hsDA = new DienThoaiDAL();
         //Thực thi các yêu cầu
         public List<DienThoai> GetAllDienThoai()
         {
-            return dtDA.GetAllDienThoai();
+            return hsDA.GetAllDienThoai();
         }
         public void ThemDienThoai(DienThoai dt)
         {
             if (!string.IsNullOrEmpty(dt.TenDienThoai))
             {
                 //Tiến hành chuẩn hóa dữ liệu nếu cần
-                dtDA.ThemDienThoai(dt);
+                hsDA.ThemDienThoai(dt);
             }
             else
                 throw new Exception("Du lieu sai");
@@ -37,7 +37,7 @@ namespace QLĐT.BusinessLayer
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                dtDA.Update(list);
+                hsDA.Update(list);
             }
             else
                 throw new Exception("Khong ton tai ma nay");
@@ -52,7 +52,7 @@ namespace QLĐT.BusinessLayer
             {
                 list.RemoveAt(i);
                 list.Add(dt);
-                dtDA.Update(list);
+                hsDA.Update(list);
             }
             else
                 throw new Exception("Khong ton tai dt nay");

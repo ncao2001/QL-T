@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QLĐT.Entities;
 
-namespace QLĐT.DataAccessLayer
+namespace QLĐT.DataAccessLayer.Interface
 {
     public interface IDienThoaiDAL
     {

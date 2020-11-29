@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using QLĐT.Entities;
 
-namespace QLĐT.DataAccessLayer
+namespace QLĐT.DataAccessLayer.Interface
 {
     class DienThoaiDAL : IDienThoaiDAL
     {
         //Xác định đường dẫn của tệp dữ liệu DienThoai.txt
-        private string txtfile = "Data/DienThoai.txt";
+        private string txtfile = @"D:\ĐỒ ÁN 1\QLĐT\Data/DienThoai.txt";
         //Lấy toàn bộ dữ liệu có trong file DienThoai.txt đưa vào một danh sách 
         public List<DienThoai> GetAllDienThoai()
         {

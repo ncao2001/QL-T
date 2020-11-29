@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QLĐT.Entities;
 
-namespace QLĐT.BusinessLayer
+namespace QLĐT.BusinessLayer.Interface
 {
     public interface IDienThoaiBLL
     {
