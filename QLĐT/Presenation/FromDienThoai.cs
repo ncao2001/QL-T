@@ -17,6 +17,7 @@ namespace QLĐT.Presenation
             Console.Clear();
             Console.WriteLine("NHAP THONG TIN DIEN THOAI");
             DienThoai dt = new DienThoai();
+            Console.Write("Nhap ma dien thoai:"); dt.MaDienThoai = Console.ReadLine();
             Console.Write("Nhap ten dien thoai:"); dt.TenDienThoai = Console.ReadLine();
             Console.Write("Nhap gia dien thoai:"); dt.DonGia = int.Parse(Console.ReadLine());
             dtBLL.ThemDienThoai(dt);
@@ -26,8 +27,8 @@ namespace QLĐT.Presenation
             Console.Clear();
             Console.WriteLine("HIEN THI THONG TIN DIEN THOAI");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
-            foreach (var sp in list)
-                Console.WriteLine(sp.MaDienThoai + "\t" + sp.TenDienThoai + "\t" + sp.DonGia);
+            foreach (var dt in list)
+                Console.WriteLine(dt.MaDienThoai + "\t" + dt.TenDienThoai + "\t" + dt.DonGia);
         }
         public void Sua()
         {
@@ -56,6 +57,51 @@ namespace QLĐT.Presenation
             {
                 Console.WriteLine("Khong ton tai ma dien thoai nay");
             }
+        }
+        public void Xoa()
+        {
+            Console.Clear();
+            Console.WriteLine("XOA THONG TIN DIEN THOAI");
+            List<DienThoai> list = dtBLL.GetAllDienThoai();
+            string madienthoai;
+            Console.Write("Nhap ma dien thoai can xoa:");
+            madienthoai = Console.ReadLine();
+            int i = 0;
+            for (i = 0; i < list.Count; ++i)
+                if (list[i].MaDienThoai == madienthoai) break;
+
+            if (i < list.Count)
+            {
+                list.RemoveAt(i);
+                dtBLL.XoaDienThoai(madienthoai);
+            }
+            else
+            {
+                Console.WriteLine("Khong ton tai ma dien thoai nay");
+            }
+        }
+        public void TimKiem()
+        {
+            Console.Clear();
+            Console.WriteLine("Tim tiem dien thoai");
+            List<DienThoai> list = dtBLL.GetAllDienThoai();
+
+            Console.Write("Nhap thong tin dien thoai can tim kiem:");
+            string tt = Console.ReadLine();
+            int i = 0;
+            for (i = 0; i < list.Count; i++)
+                if (list[i].MaDienThoai == tt || list[i].TenDienThoai == tt) break;
+            if (i < list.Count)
+            {
+                List<DienThoai> grt = dtBLL.TimDienThoai(new DienThoai(list[i]));
+                foreach (var x in grt)
+
+                    Console.WriteLine(x.MaDienThoai + "\t" + x.TenDienThoai + "\t" + x.DonGia);
+            }
+
+            else Console.WriteLine("Thong tin dien thoai nay k ton tai");
+
+
         }
         public void Menu()
         {
@@ -89,11 +135,24 @@ namespace QLĐT.Presenation
                         Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                         Console.ReadKey();
                         break;
+                    case '3':
+                        Xoa();
+                        Hien();
+                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.ReadKey();
+                        break;
+                    case '5':
+                        TimKiem();
+                        Hien();
+                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.ReadKey();
+                        break;
                     case '6':
                         Program.Menu();
                         break;
                 }
             } while (true);
         }
+        
     }
 }

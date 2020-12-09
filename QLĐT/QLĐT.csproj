@@ -44,13 +44,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\DienThoaiBLL.cs" />
+    <Compile Include="BusinessLayer\HoaDonBLL.cs" />
     <Compile Include="BusinessLayer\Interface\IDienThoaiBLL.cs" />
+    <Compile Include="BusinessLayer\Interface\IHoaDonBLL.cs" />
+    <Compile Include="BusinessLayer\Interface\IKhachHangBLL.cs" />
+    <Compile Include="BusinessLayer\KhachHangBLL.cs" />
     <Compile Include="DataAccessLayer\DienThoaiDAL.cs" />
+    <Compile Include="DataAccessLayer\HoaDonDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\IDienThoaiDAL.cs" />
+    <Compile Include="DataAccessLayer\Interface\IHoaDonDAL.cs" />
+    <Compile Include="DataAccessLayer\Interface\IKhachHangDAL.cs" />
+    <Compile Include="DataAccessLayer\KhachHangDAL.cs" />
     <Compile Include="Entities\DienThoai.cs" />
     <Compile Include="Entities\HoaDon.cs" />
     <Compile Include="Entities\KhachHang.cs" />
     <Compile Include="Presenation\FromDienThoai.cs" />
+    <Compile Include="Presenation\FromHoaDon.cs" />
+    <Compile Include="Presenation\FromKhachHang.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

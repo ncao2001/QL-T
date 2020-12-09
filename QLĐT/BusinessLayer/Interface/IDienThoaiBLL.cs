@@ -12,7 +12,7 @@ namespace QLĐT.BusinessLayer.Interface
         List<DienThoai> GetAllDienThoai();
         void ThemDienThoai(DienThoai dt);
         void XoaDienThoai(string madienthoai);
-        void SuaDienThoai(DienThoai sp);
+        void SuaDienThoai(DienThoai dt);
         List<DienThoai> TimDienThoai(DienThoai dt);
     }
 }

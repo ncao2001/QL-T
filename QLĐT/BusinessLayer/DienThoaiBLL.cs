@@ -11,18 +11,18 @@ namespace QLĐT.BusinessLayer.Interface
     //Thực thi các yêu cầu nghiệm vụ của bài toán đã được quy định tại IDienThoaiBLL
     public class DienThoaiBLL : IDienThoaiBLL
     {
-        private IDienThoaiDAL hsDA = new DienThoaiDAL();
+        private IDienThoaiDAL dtDA = new DienThoaiDAL();
         //Thực thi các yêu cầu
         public List<DienThoai> GetAllDienThoai()
         {
-            return hsDA.GetAllDienThoai();
+            return dtDA.GetAllDienThoai();
         }
         public void ThemDienThoai(DienThoai dt)
         {
             if (!string.IsNullOrEmpty(dt.TenDienThoai))
             {
                 //Tiến hành chuẩn hóa dữ liệu nếu cần
-                hsDA.ThemDienThoai(dt);
+                dtDA.ThemDienThoai(dt);
             }
             else
                 throw new Exception("Du lieu sai");
@@ -37,7 +37,7 @@ namespace QLĐT.BusinessLayer.Interface
             if (i < list.Count)
             {
                 list.RemoveAt(i);
-                hsDA.Update(list);
+                dtDA.Update(list);
             }
             else
                 throw new Exception("Khong ton tai ma nay");
@@ -52,7 +52,7 @@ namespace QLĐT.BusinessLayer.Interface
             {
                 list.RemoveAt(i);
                 list.Add(dt);
-                hsDA.Update(list);
+                dtDA.Update(list);
             }
             else
                 throw new Exception("Khong ton tai dt nay");
@@ -65,6 +65,7 @@ namespace QLĐT.BusinessLayer.Interface
             {
                 kq = list;
             }
+
             //Tim theo ten dt
             if (!string.IsNullOrEmpty(dt.TenDienThoai))
             {

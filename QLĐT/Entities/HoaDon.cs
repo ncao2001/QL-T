@@ -10,8 +10,10 @@ namespace QLĐT.Entities
     {
         #region Các thành phần dữ liệu
         private string mahoadon;
-        private string makhachhang;
-        private string ngayxuat;
+        private string tendienthoai;
+        private DateTime ngayban;
+        private int soluong;
+        private int tongtien;
         #endregion
 
         #region Các thuộc tính
@@ -24,22 +26,39 @@ namespace QLĐT.Entities
                     mahoadon = value;
             }
         }
-        public string MaKhachHang
+        public string TenDienThoai
         {
-            get { return makhachhang; }
+            get { return tendienthoai; }
             set
             {
                 if (!string.IsNullOrEmpty(value))
-                    makhachhang = value;
+                    tendienthoai = value;
             }
         }
-        public string NgayXuat
+        public DateTime NgayBan
         {
-            get { return ngayxuat; }
+            get { return ngayban; }
             set
             {
-                if (!string.IsNullOrEmpty(value))
-                    ngayxuat = value;
+                 ngayban = value;
+            }
+        }
+        public int TongTien
+        {
+            get { return tongtien; }
+            set
+            {
+                if (value>0)
+                    tongtien = value;
+            }
+        }
+        public int SoLuong
+        {
+            get { return soluong; }
+            set
+            {
+                if (value > 0)
+                    soluong = value;
             }
         }
         #endregion
@@ -50,14 +69,18 @@ namespace QLĐT.Entities
         public HoaDon(HoaDon hd)
         {
             this.mahoadon = hd.mahoadon;
-            this.makhachhang = hd.makhachhang;
-            this.ngayxuat = hd.ngayxuat;
+            this.tendienthoai = hd.tendienthoai;
+            this.ngayban = hd.ngayban;
+            this.tongtien = hd.tongtien;
+            this.soluong = hd.soluong;
         }
-        public HoaDon(string mahoadon, string makhachhang, string ngayxuat)
+        public HoaDon(string mahoadonnhap,string tendienthoai, DateTime ngayban, int tongtiennhap, int soluong)
         {
-            this.mahoadon = mahoadon;
-            this.makhachhang = makhachhang;
-            this.ngayxuat = ngayxuat;
+            this.mahoadon = mahoadonnhap;
+            this.tendienthoai = tendienthoai;
+            this.ngayban = ngayban;
+            this.tongtien = tongtiennhap;
+            this.soluong = soluong;
         }
         #endregion
     }
