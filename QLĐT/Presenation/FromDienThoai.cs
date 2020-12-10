@@ -17,9 +17,9 @@ namespace QLĐT.Presenation
             Console.Clear();
             Console.WriteLine("------------------------------NHẬP THÔNG TIN ĐIỆN THOẠI------------------------------");
             DienThoai dt = new DienThoai();
-            Console.Write("                         Mã điện thoại:"); dt.MaDienThoai = Console.ReadLine();
-            Console.Write("                         Tên điện thoại:"); dt.TenDienThoai = Console.ReadLine();
-            Console.Write("                         Giá bán:"); dt.DonGia = int.Parse(Console.ReadLine());
+            Console.Write("Mã điện thoại:"); dt.MaDienThoai = Console.ReadLine();
+            Console.Write("Tên điện thoại:"); dt.TenDienThoai = Console.ReadLine();
+            Console.Write("Giá bán:"); dt.DonGia = int.Parse(Console.ReadLine());
             dtBLL.ThemDienThoai(dt);
         }
         public void Hien()
@@ -36,7 +36,7 @@ namespace QLĐT.Presenation
             Console.WriteLine("------------------------------SỬA THÔNG TIN ĐIỆN THOẠI------------------------------");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
             string madienthoai;
-            Console.Write("                         Nhập mã điện thoại cần sửa:");
+            Console.Write("Nhập mã điện thoại cần sửa:");
             madienthoai = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -45,10 +45,10 @@ namespace QLĐT.Presenation
             if (i < list.Count)
             {
                 DienThoai dt = new DienThoai(list[i]);
-                Console.Write("                         Nhập tên mới:");
+                Console.Write("Nhập tên mới:");
                 string ten = Console.ReadLine();
                 if (!string.IsNullOrEmpty(ten)) dt.TenDienThoai = ten;
-                Console.Write("                         Giá mới:");
+                Console.Write("Giá mới:");
                 int gia = int.Parse(Console.ReadLine());
                 if (gia > 0) dt.DonGia = gia;
                 dtBLL.SuaDienThoai(dt);
@@ -64,7 +64,7 @@ namespace QLĐT.Presenation
             Console.WriteLine("------------------------------XÓA THÔNG TIN ĐIỆN THOẠI------------------------------");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
             string madienthoai;
-            Console.Write("                         Nhập mã điện thoại cần xóa:");
+            Console.Write("Nhập mã điện thoại cần xóa:");
             madienthoai = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -86,7 +86,7 @@ namespace QLĐT.Presenation
             Console.WriteLine("------------------------------TÌM KIẾM ĐIỆN THOẠI------------------------------");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
 
-            Console.Write("                         Nhập thông tin điện thoại cần tìm kiếm:");
+            Console.Write("Nhập thông tin điện thoại cần tìm kiếm:");
             string tt = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; i++)
@@ -109,19 +109,19 @@ namespace QLĐT.Presenation
             {
                 Console.Clear();
                 Console.WriteLine("------------------------------QUẢN LÝ THÔNG TIN ĐIỆN THOẠI------------------------------");
-                Console.WriteLine("                      ┌─────────────────────────────────────────┐");
-                Console.WriteLine("                      |            1.Nhập điện thoại            |");
-                Console.WriteLine("                      ├─────────────────────────────────────────┤");
-                Console.WriteLine("                      |            2.Sửa điện thoại             |");
-                Console.WriteLine("                      ├─────────────────────────────────────────┤");
-                Console.WriteLine("                      |            3.Xóa điện thoại             |");
-                Console.WriteLine("                      ├─────────────────────────────────────────┤");
-                Console.WriteLine("                      |            4.Hiển thị danh sách         |");
-                Console.WriteLine("                      ├─────────────────────────────────────────┤");
-                Console.WriteLine("                      |            5.Tìm kiếm                   |");
-                Console.WriteLine("                      ├─────────────────────────────────────────┤");
-                Console.WriteLine("                      |            6.Trờ lại                    |");
-                Console.WriteLine("                      └─────────────────────────────────────────┘");
+                Console.WriteLine("                      ┌─────────────────────────────────────────┐                       ");
+                Console.WriteLine("                      |            1.Nhập điện thoại            |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            2.Sửa điện thoại             |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            3.Xóa điện thoại             |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            4.Hiển thị danh sách         |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            5.Tìm kiếm                   |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            6.Trờ lại                    |                       ");
+                Console.WriteLine("                      └─────────────────────────────────────────┘                       ");
                 ConsoleKeyInfo kt = Console.ReadKey();
                 switch (kt.KeyChar)
                 {

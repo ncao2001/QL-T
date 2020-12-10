@@ -15,19 +15,19 @@ namespace QLĐT.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHAP THONG TIN KHACH HANG");
+            Console.WriteLine("------------------------------NHẬP THÔNG TIN KHÁCH HÀNG------------------------------");
             KhachHang kh = new KhachHang();
-            Console.Write("Nhap ma khach hang:"); kh.MaKhachHang = Console.ReadLine();
-            Console.Write("Nhap ten khach hang:"); kh.HoTen = Console.ReadLine();
-            Console.Write("Nhap que quan khach hang:"); kh.QueQuan = Console.ReadLine();
-            Console.Write("Nhap dia chi khach hang:"); kh.DiaChi = Console.ReadLine();
-            Console.Write("Nhap sdt khach hang:"); kh.SodienThoai = Console.ReadLine();
+            Console.Write("Mã khách hàng:"); kh.MaKhachHang = Console.ReadLine();
+            Console.Write("Tên khách hàng:"); kh.HoTen = Console.ReadLine();
+            Console.Write("Quê quán:"); kh.QueQuan = Console.ReadLine();
+            Console.Write("Địa chỉ:"); kh.DiaChi = Console.ReadLine();
+            Console.Write("SĐT:"); kh.SodienThoai = Console.ReadLine();
             khBLL.ThemKhachHang(kh);
         }
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("HIEN THI THONG TIN KHACH HANG");
+            Console.WriteLine("------------------------------HIỂN THỊ THÔNG TIN KHÁCH HÀNG------------------------------");
             List<KhachHang> list = khBLL.GetAllKhachHang();
             foreach (var kh in list)
                 Console.WriteLine(kh.MaKhachHang + "\t" + kh.HoTen + "\t" + kh.QueQuan + "\t" + kh.DiaChi + "\t" + kh.SodienThoai);
@@ -35,10 +35,10 @@ namespace QLĐT.Presenation
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN KHACH HANG");
+            Console.WriteLine("------------------------------SỬA THÔNG TIN KHÁCH HÀNG------------------------------");
             List<KhachHang> list = khBLL.GetAllKhachHang();
             string makhachhang;
-            Console.Write("Nhap ma khach hang can sua:");
+            Console.Write("Nhập mã khách hàng cần sửa:");
             makhachhang = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -47,32 +47,32 @@ namespace QLĐT.Presenation
             if (i < list.Count)
             {
                 KhachHang kh = new KhachHang(list[i]);
-                Console.Write("Nhap ten moi:");
+                Console.Write("Tên mới:");
                 string ten = Console.ReadLine();
                 if (!string.IsNullOrEmpty(ten)) kh.HoTen = ten;
-                Console.Write("Nhap que quan moi:");
+                Console.Write("Quê quán:");
                 string qq = Console.ReadLine();
                 if (!string.IsNullOrEmpty(qq)) kh.QueQuan = qq;
-                Console.Write("Nhap dia chi moi:");
+                Console.Write("Địa chỉ:");
                 string dc = Console.ReadLine();
                 if (!string.IsNullOrEmpty(dc)) kh.DiaChi = dc;
-                Console.Write("Nhap so dien thoai moi :");
+                Console.Write("SĐT:");
                 string sdt = Console.ReadLine();
                 if (!string.IsNullOrEmpty(sdt)) kh.SodienThoai = sdt;
                 khBLL.SuaKhachHang(kh);
             }
             else
             {
-                Console.WriteLine("Khong ton tai ma khach hang nay");
+                Console.WriteLine("                         Không tồn tại mã khách hàng này!!!");
             }
         }
         public void Xoa()
         {
             Console.Clear();
-            Console.WriteLine("XOA THONG TIN KHACH HANG");
+            Console.WriteLine("------------------------------XÓA THÔNG TIN KHÁCH HÀNG------------------------------");
             List<KhachHang> list = khBLL.GetAllKhachHang();
             string makhachhang;
-            Console.Write("Nhap ma khach hang can xoa:");
+            Console.Write("Nhập mã khách hàng cần xóa:");
             makhachhang = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -85,16 +85,16 @@ namespace QLĐT.Presenation
             }
             else
             {
-                Console.WriteLine("Khong ton tai ma khach hang nay");
+                Console.WriteLine("                         Không tồn tại mã khách hàng này!!!");
             }
         }
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("Tim kiem khach hang");
+            Console.WriteLine("------------------------------TÌM KIẾM KHÁCH HÀNG------------------------------");
             List<KhachHang> list = khBLL.GetAllKhachHang();
 
-            Console.Write("Nhap thong tin khach hang can tim kiem:");
+            Console.Write("Nhập tên khách hàng cần tìm kiếm:");
             string tt = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; i++)
@@ -107,7 +107,7 @@ namespace QLĐT.Presenation
                     Console.WriteLine(x.MaKhachHang + "\t" + x.HoTen + "\t" + x.QueQuan + "\t" + x.DiaChi + "\t" + x.SodienThoai);
             }
 
-            else Console.WriteLine("Thong tin khach hang nay k ton tai");
+            else Console.WriteLine("                         Tên khách hàng này không tồn tại!!!");
 
 
         }
@@ -116,42 +116,49 @@ namespace QLĐT.Presenation
             do
             {
                 Console.Clear();
-                Console.WriteLine("QUAN LY THONG TIN KHACH HANG");
-                Console.WriteLine(" 1.Nhap khach hang ");
-                Console.WriteLine(" 2.Sua khach hang ");
-                Console.WriteLine(" 3.Xoa khach hang ");
-                Console.WriteLine(" 4.Hien danh sach ");
-                Console.WriteLine(" 5.Kim kiem ");
-                Console.WriteLine(" 6.Back ");
+                Console.WriteLine("------------------------------QUẢN LÝ THÔNG TIN KHÁCH HÀNG------------------------------");
+                Console.WriteLine("                      ┌─────────────────────────────────────────┐                       ");
+                Console.WriteLine("                      |            1.Nhập khách hàng            |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            2.Sửa khách hàng             |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            3.Xóa khách hàng             |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            4.Hiển thị danh sách         |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            5.Tìm kiếm                   |                       ");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤                       ");
+                Console.WriteLine("                      |            6.Trờ lại                    |                       ");
+                Console.WriteLine("                      └─────────────────────────────────────────┘                       ");
                 ConsoleKeyInfo kt = Console.ReadKey();
                 switch (kt.KeyChar)
                 {
                     case '1':
                         Nhap();
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '4':
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '2':
                         Sua();
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '3':
                         Xoa();
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '5':
                         TimKiem();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '6':

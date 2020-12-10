@@ -67,7 +67,7 @@ namespace QLĐT
                 else
                 {
 
-                    Console.WriteLine("                                Tài khoản hoặc mật khẩu sai");
+                    Console.WriteLine("                                Tài khoản hoặc mật khẩu không chính xác!!!");
                     Console.WriteLine("                                Chọn 1 để tiếp tục đăng nhập | Chọn 2 để thoát");
                     String chon = Console.ReadLine();
                     if (chon == "1")
