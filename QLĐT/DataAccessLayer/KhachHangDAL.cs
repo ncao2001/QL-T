@@ -36,7 +36,7 @@ namespace QLĐT.DataAccessLayer.Interface
             //string makhachhanng = "DT" + DateTime.Now.ToString("yyMMddhhmmss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(kh.MaKhachHang + "#" + kh.Hoten + "#" + kh.QueQuan + "#" + kh.DiaChi + "#" + kh.SodienThoai);
+            fwrite.Write(kh.MaKhachHang + "#" + kh.HoTen + "#" + kh.QueQuan + "#" + kh.DiaChi + "#" + kh.SodienThoai);
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
@@ -44,7 +44,7 @@ namespace QLĐT.DataAccessLayer.Interface
         {
             StreamWriter fwrite = File.CreateText(txtfile);
             for (int i = 0; i < list.Count; ++i)
-                fwrite.WriteLine(list[i].MaKhachHang + "#" + list[i].Hoten + "#" + list[i].QueQuan + "#" + list[i].DiaChi + "#" + list[i].SodienThoai);
+                fwrite.WriteLine(list[i].MaKhachHang + "#" + list[i].HoTen + "#" + list[i].QueQuan + "#" + list[i].DiaChi + "#" + list[i].SodienThoai);
             fwrite.Close();
         }
     }

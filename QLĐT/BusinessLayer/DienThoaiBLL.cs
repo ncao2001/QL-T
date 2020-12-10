@@ -85,7 +85,6 @@ namespace QLĐT.BusinessLayer.Interface
                         kq.Add(new DienThoai(list[i]));
                     }
             }
-            else kq = null;
             return kq;
         }
 

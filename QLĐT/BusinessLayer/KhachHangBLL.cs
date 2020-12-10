@@ -19,7 +19,7 @@ namespace QLĐT.BusinessLayer.Interface
         }
         public void ThemKhachHang(KhachHang kh)
         {
-            if (!string.IsNullOrEmpty(kh.Hoten))
+            if (!string.IsNullOrEmpty(kh.HoTen))
             {
                 //Tiến hành chuẩn hóa dữ liệu nếu cần
                 khDA.ThemKhachHang(kh);
@@ -61,27 +61,21 @@ namespace QLĐT.BusinessLayer.Interface
         {
             List<KhachHang> list = GetAllKhachHang();
             List<KhachHang> kq = new List<KhachHang>();
-            if (string.IsNullOrEmpty(kh.MaKhachHang) && string.IsNullOrEmpty(kh.Hoten) )
+            if (string.IsNullOrEmpty(kh.MaKhachHang) && string.IsNullOrEmpty(kh.HoTen))
             {
                 kq = list;
             }
-
             //Tim theo ten kh
-            if (!string.IsNullOrEmpty(kh.Hoten))
+            if (!string.IsNullOrEmpty(kh.HoTen))
             {
                 for (int i = 0; i < list.Count; ++i)
-                    if (list[i].Hoten.IndexOf(kh.Hoten) >= 0)
+                    if (list[i].HoTen.IndexOf(kh.HoTen) >= 0)
                     {
                         kq.Add(new KhachHang(list[i]));
                     }
             }
-            else kq = null;
             return kq;
         }
 
-        List<KhachHang> IKhachHangBLL.TimKhachHang(KhachHang kh)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

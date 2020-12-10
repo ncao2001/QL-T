@@ -11,7 +11,7 @@ namespace QLĐT.Entities
         #region Các thành phần dữ liệu
         private string mahoadon;
         private string tendienthoai;
-        private DateTime ngayban;
+        private string ngayban;
         private int soluong;
         private int tongtien;
         #endregion
@@ -35,12 +35,13 @@ namespace QLĐT.Entities
                     tendienthoai = value;
             }
         }
-        public DateTime NgayBan
+        public string NgayBan
         {
             get { return ngayban; }
             set
             {
-                 ngayban = value;
+                if (!string.IsNullOrEmpty(value))
+                    ngayban = value;
             }
         }
         public int TongTien
@@ -74,7 +75,7 @@ namespace QLĐT.Entities
             this.tongtien = hd.tongtien;
             this.soluong = hd.soluong;
         }
-        public HoaDon(string mahoadonnhap,string tendienthoai, DateTime ngayban, int tongtiennhap, int soluong)
+        public HoaDon(string mahoadonnhap,string tendienthoai, string ngayban, int tongtiennhap, int soluong)
         {
             this.mahoadon = mahoadonnhap;
             this.tendienthoai = tendienthoai;

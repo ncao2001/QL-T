@@ -19,7 +19,7 @@ namespace QLĐT.Presenation
             HoaDon hd = new HoaDon();
             Console.Write("Nhap ma hoa don:"); hd.MaHoaDon = Console.ReadLine();
             Console.Write("Nhap ten dien thoai:");hd.TenDienThoai = Console.ReadLine();
-            Console.Write("Ngay ban:"); hd.NgayBan = DateTime.Parse(Console.ReadLine());
+            Console.Write("Ngay ban:"); hd.NgayBan = Console.ReadLine();
             Console.Write("So luong:"); hd.SoLuong = int.Parse(Console.ReadLine());
             Console.Write("Tong tien:"); hd.TongTien = int.Parse(Console.ReadLine());
             hdBLL.ThemHoaDon(hd);
@@ -52,7 +52,7 @@ namespace QLĐT.Presenation
                 if (tendienthoai != "")
                 hd.TenDienThoai = tendienthoai;
                 Console.Write("Ngay ban:");
-                DateTime ngayban = DateTime.Parse(Console.ReadLine());
+                string ngayban = Console.ReadLine();
                 hd.NgayBan = ngayban;
                 Console.Write("So luong:");
                 int soluong = int.Parse(Console.ReadLine());
@@ -152,7 +152,6 @@ namespace QLĐT.Presenation
                         break;
                     case '5':
                         TimKiem();
-                        Hien();
                         Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                         Console.ReadKey();
                         break;

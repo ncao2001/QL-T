@@ -83,7 +83,7 @@ namespace QLĐT.Presenation
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("Tim tiem dien thoai");
+            Console.WriteLine("Tim kiem dien thoai");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
 
             Console.Write("Nhap thong tin dien thoai can tim kiem:");
@@ -142,8 +142,7 @@ namespace QLĐT.Presenation
                         Console.ReadKey();
                         break;
                     case '5':
-                        TimKiem();
-                        Hien();
+                        TimKiem();                      
                         Console.WriteLine("Nhap phim bat ky de tiep tuc...");
                         Console.ReadKey();
                         break;

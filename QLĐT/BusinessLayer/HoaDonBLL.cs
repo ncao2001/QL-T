@@ -57,7 +57,7 @@ namespace QLĐT.BusinessLayer.Interface
             else
                 throw new Exception("Khong ton tai hdn nay");
         }
-        public List<HoaDon> TimHoaDonNhap(HoaDon hdn)
+        public List<HoaDon> TimHoaDon(HoaDon hdn)
         {
             List<HoaDon> list = GetAllHoaDon();
             List<HoaDon> kq = new List<HoaDon>();
@@ -76,11 +76,6 @@ namespace QLĐT.BusinessLayer.Interface
                     }
             }
             return kq;
-        }
-
-        public List<HoaDon> TimHoaDon(HoaDon hd)
-        {
-            throw new NotImplementedException();
         }
     }
 }

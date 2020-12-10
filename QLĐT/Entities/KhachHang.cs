@@ -26,7 +26,7 @@ namespace QLĐT.Entities
                     makhachhang = value;
             }
         }
-        public string Hoten
+        public string HoTen
         {
             get { return hoten; }
             set

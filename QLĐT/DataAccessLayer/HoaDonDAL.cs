@@ -23,25 +23,22 @@ namespace QLĐT.DataAccessLayer.Interface
                 if (s != "")
                 {
                     string[] a = s.Split('#');
-                    list.Add(new HoaDon(a[0], a[1], DateTime.Parse(a[2]), int.Parse(a[3]), int.Parse(a[4])));
+                    list.Add(new HoaDon(a[0], a[1], a[2], int.Parse(a[3]), int.Parse(a[4])));
                 }
                 s = fread.ReadLine();
             }
             fread.Close();
             return list;
         }
-        public void ThemHoaDon(HoaDon hd)
-        {
-            throw new NotImplementedException();
-        }
+
 
         //Chèn một bản ghi khách hàng vào tệp
-        public void ThemHoaDonNhap(HoaDon hdn)
+        public void ThemHoaDon(HoaDon hd)
         {
             //string makhachhanng = "DT" + DateTime.Now.ToString("yyMMddhhmmss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(hdn.MaHoaDon + "#" + hdn.TenDienThoai + "#" + hdn.NgayBan + "#" + hdn.SoLuong + "#" + hdn.TongTien );
+            fwrite.Write(hd.MaHoaDon + "#" + hd.TenDienThoai + "#" + hd.NgayBan + "#" + hd.SoLuong + "#" + hd.TongTien );
             fwrite.Close();
         }
         //Cập nhật lại danh sách vào tệp        
