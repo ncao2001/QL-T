@@ -25,7 +25,7 @@ namespace QLĐT.BusinessLayer.Interface
                 hdDA.ThemHoaDon(hd);
             }
             else
-                throw new Exception("Du lieu sai");
+                throw new Exception("Dữ liệu sai!!!");
         }
 
         public void XoaHoaDon(string mahoadon)
@@ -40,7 +40,7 @@ namespace QLĐT.BusinessLayer.Interface
                 hdDA.Update(list);
             }
             else
-                throw new Exception("Khong ton tai ma nay");
+                throw new Exception("Không tồn tại mã hóa đơn này!!!");
         }
         public void SuaHoaDon(HoaDon hd)
         {
@@ -55,7 +55,7 @@ namespace QLĐT.BusinessLayer.Interface
                 hdDA.Update(list);
             }
             else
-                throw new Exception("Khong ton tai hdn nay");
+                throw new Exception("Không tồn tại mã hóa đơn này!!!");
         }
         public List<HoaDon> TimHoaDon(HoaDon hdn)
         {
@@ -66,7 +66,7 @@ namespace QLĐT.BusinessLayer.Interface
                 kq = list;
             }
 
-            //Tim theo ten hdn
+            //Tìm theo mã hóa đơn
             if (!string.IsNullOrEmpty(hdn.MaHoaDon))
             {
                 for (int i = 0; i < list.Count; ++i)

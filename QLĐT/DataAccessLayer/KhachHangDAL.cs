@@ -33,7 +33,6 @@ namespace QLĐT.DataAccessLayer.Interface
         //Chèn một bản ghi khách hàng vào tệp
         public void ThemKhachHang(KhachHang kh)
         {
-            //string makhachhanng = "DT" + DateTime.Now.ToString("yyMMddhhmmss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
             fwrite.Write(kh.MaKhachHang + "#" + kh.HoTen + "#" + kh.QueQuan + "#" + kh.DiaChi + "#" + kh.SodienThoai);

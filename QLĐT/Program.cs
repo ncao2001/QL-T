@@ -11,14 +11,20 @@ namespace QLĐT
     {
         public static void Menu()
         {
-            do
             {
                 Console.Clear();
-                Console.WriteLine(" 1.Quan ly dien thoai ");
-                Console.WriteLine(" 2.Quan ly khach hang ");
-                Console.WriteLine(" 3.Quan ly hoa don ");
-                Console.WriteLine(" 4.Bao cao/Thong ke ");
-                Console.WriteLine(" 5.Ket thuc ");
+                Console.WriteLine("------------------------------ĐỒ ÁN XÂY DỰNG CHƯƠNG TRÌNH QUẢN LÝ BÁN ĐIỆN THOẠI------------------------------");
+                Console.WriteLine("                                 ┌─────────────────────────────────────────┐");
+                Console.WriteLine("                                 |           1.Quản lý điện thoại          |");
+                Console.WriteLine("                                 ├─────────────────────────────────────────┤");
+                Console.WriteLine("                                 |           2.Quản lý khách hàng          |");
+                Console.WriteLine("                                 ├─────────────────────────────────────────┤");
+                Console.WriteLine("                                 |           3.Quản lý hóa đơn             |");
+                Console.WriteLine("                                 ├─────────────────────────────────────────┤");
+                Console.WriteLine("                                 |           4.Báo cáo/Thống kê            |");
+                Console.WriteLine("                                 ├─────────────────────────────────────────┤");
+                Console.WriteLine("                                 |           5.Kết thúc                    |");
+                Console.WriteLine("                                 └─────────────────────────────────────────┘");
                 ConsoleKeyInfo kt = Console.ReadKey();
                 switch (kt.KeyChar)
                 {
@@ -40,10 +46,41 @@ namespace QLĐT
                 }
             } while (true);
         }
-
         static void Main(string[] args)
         {
-            Menu();
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
+            do
+            {
+                Console.WriteLine("                                 ┌─────────────────────────────────────────┐");
+                Console.WriteLine("                                 |                Đăng nhập                |");
+                Console.WriteLine("                                 └─────────────────────────────────────────┘");
+                Console.Write("                                           Tài khoản:");
+                String tk = Console.ReadLine();
+                Console.Write("                                           Mật khẩu:");
+                String mk = Console.ReadLine();
+                if (tk == "1" && mk == "1")
+                {
+                    Console.Clear();
+                    Menu();
+                }
+                else
+                {
+
+                    Console.WriteLine("                                Tài khoản hoặc mật khẩu sai");
+                    Console.WriteLine("                                Chọn 1 để tiếp tục đăng nhập | Chọn 2 để thoát");
+                    String chon = Console.ReadLine();
+                    if (chon == "1")
+                    {
+                        Console.Clear();
+                        continue;
+                    }
+                    else if (chon == "2")
+                    {
+                        break;
+                    }
+                }
+            } while (true); 
         }
     }
 }

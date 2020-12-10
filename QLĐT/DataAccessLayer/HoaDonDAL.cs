@@ -32,10 +32,9 @@ namespace QLĐT.DataAccessLayer.Interface
         }
 
 
-        //Chèn một bản ghi khách hàng vào tệp
+        //Chèn một bản ghi hóa đơn vào tệp
         public void ThemHoaDon(HoaDon hd)
         {
-            //string makhachhanng = "DT" + DateTime.Now.ToString("yyMMddhhmmss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
             fwrite.Write(hd.MaHoaDon + "#" + hd.TenDienThoai + "#" + hd.NgayBan + "#" + hd.SoLuong + "#" + hd.TongTien );

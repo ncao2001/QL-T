@@ -25,7 +25,7 @@ namespace QLĐT.BusinessLayer.Interface
                 dtDA.ThemDienThoai(dt);
             }
             else
-                throw new Exception("Du lieu sai");
+                throw new Exception("Dữ liệu sai!!!");
         }
 
         public void XoaDienThoai(string madienthoai)
@@ -40,7 +40,7 @@ namespace QLĐT.BusinessLayer.Interface
                 dtDA.Update(list);
             }
             else
-                throw new Exception("Khong ton tai ma nay");
+                throw new Exception("Không tồn tại mã điện thoại này!!!");
         }
         public void SuaDienThoai(DienThoai dt)
         {
@@ -55,7 +55,7 @@ namespace QLĐT.BusinessLayer.Interface
                 dtDA.Update(list);
             }
             else
-                throw new Exception("Khong ton tai dt nay");
+                throw new Exception("Không tồn tại mã điện thoại này!!!");
         }
         public List<DienThoai> TimDienThoai(DienThoai dt)
         {
@@ -66,7 +66,7 @@ namespace QLĐT.BusinessLayer.Interface
                 kq = list;
             }
 
-            //Tim theo ten dt
+            //Tìm theo tên điện thoại
             if (!string.IsNullOrEmpty(dt.TenDienThoai))
             {
                 for (int i = 0; i < list.Count; ++i)
@@ -76,7 +76,7 @@ namespace QLĐT.BusinessLayer.Interface
                     }
             }
 
-            //Tim theo gia
+            //Tìm theo giá điện thoại
             else if (dt.DonGia > 0)
             {
                 for (int i = 0; i < list.Count; ++i)

@@ -25,7 +25,7 @@ namespace QLĐT.BusinessLayer.Interface
                 khDA.ThemKhachHang(kh);
             }
             else
-                throw new Exception("Du lieu sai");
+                throw new Exception("Dữ liệu sai!!!");
         }
 
         public void XoaKhachHang(string makhachhang)
@@ -40,7 +40,7 @@ namespace QLĐT.BusinessLayer.Interface
                 khDA.Update(list);
             }
             else
-                throw new Exception("Khong ton tai ma nay");
+                throw new Exception("Không tồn tại mã khách hàng này!!!");
         }
         public void SuaKhachHang(KhachHang kh)
         {
@@ -55,7 +55,7 @@ namespace QLĐT.BusinessLayer.Interface
                 khDA.Update(list);
             }
             else
-                throw new Exception("Khong ton tai kh nay");
+                throw new Exception("Không tồn tại mã khách hàng này!!!");
         }
         public List<KhachHang> TimKhachHang(KhachHang kh)
         {
@@ -65,7 +65,7 @@ namespace QLĐT.BusinessLayer.Interface
             {
                 kq = list;
             }
-            //Tim theo ten kh
+            //Tìm theo tên khách hàng
             if (!string.IsNullOrEmpty(kh.HoTen))
             {
                 for (int i = 0; i < list.Count; ++i)

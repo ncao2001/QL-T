@@ -15,17 +15,17 @@ namespace QLĐT.Presenation
         public void Nhap()
         {
             Console.Clear();
-            Console.WriteLine("NHAP THONG TIN DIEN THOAI");
+            Console.WriteLine("------------------------------NHẬP THÔNG TIN ĐIỆN THOẠI------------------------------");
             DienThoai dt = new DienThoai();
-            Console.Write("Nhap ma dien thoai:"); dt.MaDienThoai = Console.ReadLine();
-            Console.Write("Nhap ten dien thoai:"); dt.TenDienThoai = Console.ReadLine();
-            Console.Write("Nhap gia dien thoai:"); dt.DonGia = int.Parse(Console.ReadLine());
+            Console.Write("                         Mã điện thoại:"); dt.MaDienThoai = Console.ReadLine();
+            Console.Write("                         Tên điện thoại:"); dt.TenDienThoai = Console.ReadLine();
+            Console.Write("                         Giá bán:"); dt.DonGia = int.Parse(Console.ReadLine());
             dtBLL.ThemDienThoai(dt);
         }
         public void Hien()
         {
             Console.Clear();
-            Console.WriteLine("HIEN THI THONG TIN DIEN THOAI");
+            Console.WriteLine("------------------------------HIỂN THỊ THÔNG TIN ĐIỆN THOẠI------------------------------");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
             foreach (var dt in list)
                 Console.WriteLine(dt.MaDienThoai + "\t" + dt.TenDienThoai + "\t" + dt.DonGia);
@@ -33,10 +33,10 @@ namespace QLĐT.Presenation
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("SUA THONG TIN DIEN THOAI");
+            Console.WriteLine("------------------------------SỬA THÔNG TIN ĐIỆN THOẠI------------------------------");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
             string madienthoai;
-            Console.Write("Nhap ma dien thoai can sua:");
+            Console.Write("                         Nhập mã điện thoại cần sửa:");
             madienthoai = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -45,26 +45,26 @@ namespace QLĐT.Presenation
             if (i < list.Count)
             {
                 DienThoai dt = new DienThoai(list[i]);
-                Console.Write("Nhap ten moi:");
+                Console.Write("                         Nhập tên mới:");
                 string ten = Console.ReadLine();
                 if (!string.IsNullOrEmpty(ten)) dt.TenDienThoai = ten;
-                Console.Write("Gia moi:");
+                Console.Write("                         Giá mới:");
                 int gia = int.Parse(Console.ReadLine());
                 if (gia > 0) dt.DonGia = gia;
                 dtBLL.SuaDienThoai(dt);
             }
             else
             {
-                Console.WriteLine("Khong ton tai ma dien thoai nay");
+                Console.WriteLine("                         Không tồn tại mã điện thoại này!!!");
             }
         }
         public void Xoa()
         {
             Console.Clear();
-            Console.WriteLine("XOA THONG TIN DIEN THOAI");
+            Console.WriteLine("------------------------------XÓA THÔNG TIN ĐIỆN THOẠI------------------------------");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
             string madienthoai;
-            Console.Write("Nhap ma dien thoai can xoa:");
+            Console.Write("                         Nhập mã điện thoại cần xóa:");
             madienthoai = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; ++i)
@@ -77,16 +77,16 @@ namespace QLĐT.Presenation
             }
             else
             {
-                Console.WriteLine("Khong ton tai ma dien thoai nay");
+                Console.WriteLine("                         Không tồn tại mã điện thoại này!!!");
             }
         }
         public void TimKiem()
         {
             Console.Clear();
-            Console.WriteLine("Tim kiem dien thoai");
+            Console.WriteLine("------------------------------TÌM KIẾM ĐIỆN THOẠI------------------------------");
             List<DienThoai> list = dtBLL.GetAllDienThoai();
 
-            Console.Write("Nhap thong tin dien thoai can tim kiem:");
+            Console.Write("                         Nhập thông tin điện thoại cần tìm kiếm:");
             string tt = Console.ReadLine();
             int i = 0;
             for (i = 0; i < list.Count; i++)
@@ -99,7 +99,7 @@ namespace QLĐT.Presenation
                     Console.WriteLine(x.MaDienThoai + "\t" + x.TenDienThoai + "\t" + x.DonGia);
             }
 
-            else Console.WriteLine("Thong tin dien thoai nay k ton tai");
+            else Console.WriteLine("                         Thông tin điện thoại này không tồn tại!!!");
 
 
         }
@@ -108,42 +108,49 @@ namespace QLĐT.Presenation
             do
             {
                 Console.Clear();
-                Console.WriteLine("QUAN LY THONG TIN DIEN THOAI");
-                Console.WriteLine(" 1.Nhap dien thoai ");
-                Console.WriteLine(" 2.Sua dien thoai ");
-                Console.WriteLine(" 3.Xoa dien thoai ");
-                Console.WriteLine(" 4.Hien danh sach ");
-                Console.WriteLine(" 5.Kim kiem ");
-                Console.WriteLine(" 6.Back ");
+                Console.WriteLine("------------------------------QUẢN LÝ THÔNG TIN ĐIỆN THOẠI------------------------------");
+                Console.WriteLine("                      ┌─────────────────────────────────────────┐");
+                Console.WriteLine("                      |            1.Nhập điện thoại            |");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤");
+                Console.WriteLine("                      |            2.Sửa điện thoại             |");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤");
+                Console.WriteLine("                      |            3.Xóa điện thoại             |");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤");
+                Console.WriteLine("                      |            4.Hiển thị danh sách         |");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤");
+                Console.WriteLine("                      |            5.Tìm kiếm                   |");
+                Console.WriteLine("                      ├─────────────────────────────────────────┤");
+                Console.WriteLine("                      |            6.Trờ lại                    |");
+                Console.WriteLine("                      └─────────────────────────────────────────┘");
                 ConsoleKeyInfo kt = Console.ReadKey();
                 switch (kt.KeyChar)
                 {
                     case '1':
                         Nhap();
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '4':
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '2':
                         Sua();
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '3':
                         Xoa();
                         Hien();
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '5':
                         TimKiem();                      
-                        Console.WriteLine("Nhap phim bat ky de tiep tuc...");
+                        Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
                         break;
                     case '6':
