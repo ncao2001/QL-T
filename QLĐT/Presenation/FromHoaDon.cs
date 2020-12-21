@@ -35,7 +35,7 @@ namespace QLĐT.Presenation
         public void Sua()
         {
             Console.Clear();
-            Console.WriteLine("------------------------------SỬA THÔNG TIN ĐIỆN THOẠI------------------------------");
+            Console.WriteLine("------------------------------SỬA THÔNG TIN HÓA ĐƠN------------------------------");
             List<HoaDon> list = hdBLL.GetAllHoaDon();
             string mahoadon;
             Console.Write("Nhập mã hóa đơn cần sửa:");

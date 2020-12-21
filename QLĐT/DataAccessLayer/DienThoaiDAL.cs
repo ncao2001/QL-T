@@ -33,10 +33,16 @@ namespace QLĐT.DataAccessLayer.Interface
         //Chèn một bản ghi điện thoại vào tệp
         public void ThemDienThoai(DienThoai dt)
         {
+            string madienthoai = DateTime.Now.ToString("dd/MM/yyyy_hh:mm:ss");
             StreamWriter fwrite = File.AppendText(txtfile);
             fwrite.WriteLine();
-            fwrite.Write(dt.MaDienThoai + "#" + dt.TenDienThoai + "#" + dt.DonGia);
+            fwrite.Write(madienthoai + "#" + dt.TenDienThoai + "#" + dt.DonGia);
             fwrite.Close();
+
+            StreamWriter fwritet = File.AppendText(txtfile);
+            fwritet.WriteLine();
+            fwritet.Write(dt.MaDienThoai + "#" + dt.TenDienThoai + "#" + dt.DonGia);
+            fwritet.Close();
         }
         //Cập nhật lại danh sách vào tệp        
         public void Update(List<DienThoai> list)

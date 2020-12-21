@@ -40,6 +40,11 @@ namespace QLĐT
                         FromHoaDon frmhd = new FromHoaDon();
                         frmhd.Menu();
                         break;
+                    case '4':
+                        FromBaoCao frmbc = new FromBaoCao();
+                        frmbc.Menu();
+                        Console.ReadKey();
+                        break;
                     case '5':
                         Environment.Exit(0);
                         break;
