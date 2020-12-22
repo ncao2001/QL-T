@@ -64,7 +64,7 @@ namespace QLĐT
                 String tk = Console.ReadLine();
                 Console.Write("                                           Mật khẩu:");
                 String mk = Console.ReadLine();
-                if (tk == "1" && mk == "1")
+                if (tk == "'" && mk == "'")
                 {
                     Console.Clear();
                     Menu();

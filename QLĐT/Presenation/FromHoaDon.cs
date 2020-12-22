@@ -18,7 +18,7 @@ namespace QLĐT.Presenation
             Console.WriteLine("------------------------------NHẬP THÔNG TIN HÓA ĐƠN------------------------------");
             HoaDon hd = new HoaDon();
             Console.Write("Mã hóa đơn:"); hd.MaHoaDon = Console.ReadLine();
-            Console.Write("Tên điện thoại:");hd.TenDienThoai = Console.ReadLine();
+            Console.Write("Tên điện thoại:"); hd.TenDienThoai = Console.ReadLine();
             Console.Write("Ngày bán:"); hd.NgayBan = Console.ReadLine();
             Console.Write("Số lượng:"); hd.SoLuong = int.Parse(Console.ReadLine());
             Console.Write("Tổng tiền:"); hd.TongTien = int.Parse(Console.ReadLine());

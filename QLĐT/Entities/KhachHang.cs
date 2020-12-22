@@ -66,7 +66,6 @@ namespace QLĐT.Entities
 
         #region Các thương thức             
         public KhachHang() { }
-        //Phương thức thiết lập sao chép
         public KhachHang(KhachHang kh)
         {
             this.makhachhang = kh.makhachhang;

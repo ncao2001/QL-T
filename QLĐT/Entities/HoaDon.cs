@@ -44,15 +44,6 @@ namespace QLĐT.Entities
                     ngayban = value;
             }
         }
-        public int TongTien
-        {
-            get { return tongtien; }
-            set
-            {
-                if (value>0)
-                    tongtien = value;
-            }
-        }
         public int SoLuong
         {
             get { return soluong; }
@@ -62,26 +53,34 @@ namespace QLĐT.Entities
                     soluong = value;
             }
         }
+        public int TongTien
+        {
+            get { return tongtien; }
+            set
+            {
+                if (value>0)
+                    tongtien = value;
+            }
+        }
         #endregion
 
         #region Các thương thức             
         public HoaDon() { }
-        //Phương thức thiết lập sao chép
         public HoaDon(HoaDon hd)
         {
             this.mahoadon = hd.mahoadon;
             this.tendienthoai = hd.tendienthoai;
             this.ngayban = hd.ngayban;
-            this.tongtien = hd.tongtien;
             this.soluong = hd.soluong;
+            this.tongtien = hd.tongtien;
         }
-        public HoaDon(string mahoadonnhap,string tendienthoai, string ngayban, int tongtiennhap, int soluong)
+        public HoaDon(string mahoadon,string tendienthoai, string ngayban, int soluong, int tongtien)
         {
-            this.mahoadon = mahoadonnhap;
+            this.mahoadon = mahoadon;
             this.tendienthoai = tendienthoai;
             this.ngayban = ngayban;
-            this.tongtien = tongtiennhap;
             this.soluong = soluong;
+            this.tongtien = tongtien;
         }
         #endregion
     }

@@ -15,11 +15,15 @@ namespace QLĐT.Presenation
         {
             Console.Clear();
             Console.WriteLine("------------------------------HIỂN THỊ BÁO CÁO------------------------------");
-            string madienthoai = DateTime.Now.ToString("dd/MM/yyyy_hh:mm:ss");
-            Console.WriteLine(madienthoai);
+            string day = DateTime.Now.ToString("dd/MM/yyyy_hh:mm:ss");
+            Console.WriteLine(day);
             List<HoaDon> list = hdBLL.GetAllHoaDon();
             foreach (var hd in list)
                 Console.WriteLine(hd.MaHoaDon + "\t" + hd.TenDienThoai + "\t" + hd.NgayBan + "\t" + hd.SoLuong + "\t" + hd.TongTien);            
+        }
+        public void SoLuongDT()
+        {
+    
         }
         public void Menu()
         {
@@ -43,6 +47,9 @@ namespace QLĐT.Presenation
                         Hien();
                         Console.WriteLine("                         Nhấn phím bất kì để tiếp tục...");
                         Console.ReadKey();
+                        break;
+                    case '2':
+                        SoLuongDT();
                         break;
                     case '4':
                         Program.Menu();

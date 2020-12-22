@@ -46,17 +46,16 @@ namespace QLĐT.Entities
 
         #region Các thương thức             
         public DienThoai() { }
-        //Phương thức thiết lập sao chép
         public DienThoai(DienThoai dt)
         {
             this.madienthoai = dt.madienthoai;
             this.tendienthoai = dt.tendienthoai;
             this.dongia = dt.dongia;
         }
-        public DienThoai(string masanpham, string tensanpham, int dongia)
+        public DienThoai(string madienthoai, string tendienthoai, int dongia)
         {
-            this.madienthoai = masanpham;
-            this.tendienthoai = tensanpham;
+            this.madienthoai = madienthoai;
+            this.tendienthoai = tendienthoai;
             this.dongia = dongia;
         }
         #endregion
