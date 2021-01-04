@@ -55,7 +55,6 @@
     <Compile Include="DataAccessLayer\Interface\IHoaDonDAL.cs" />
     <Compile Include="DataAccessLayer\Interface\IKhachHangDAL.cs" />
     <Compile Include="DataAccessLayer\KhachHangDAL.cs" />
-    <Compile Include="Entities\BaoCao.cs" />
     <Compile Include="Entities\DienThoai.cs" />
     <Compile Include="Entities\HoaDon.cs" />
     <Compile Include="Entities\KhachHang.cs" />

@@ -23,7 +23,11 @@ namespace QLĐT.Presenation
         }
         public void SoLuongDT()
         {
-    
+            Console.WriteLine("");
+        }
+        public void TongTienThuNhap()
+        {
+
         }
         public void Menu()
         {

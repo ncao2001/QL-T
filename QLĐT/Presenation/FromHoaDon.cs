@@ -43,7 +43,6 @@ namespace QLĐT.Presenation
             int i = 0;
             for (i = 0; i < list.Count; ++i)
                 if (list[i].MaHoaDon == mahoadon) break;
-
             if (i < list.Count)
             {
                 HoaDon hd = new HoaDon(list[i]);
@@ -109,8 +108,6 @@ namespace QLĐT.Presenation
             }
 
             else Console.WriteLine("                         Không tồn tại mã hóa đơn này!!!");
-
-
         }
         public void Menu()
         {

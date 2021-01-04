@@ -41,7 +41,7 @@ namespace QLĐT.Presenation
             int i = 0;
             for (i = 0; i < list.Count; ++i)
                 if (list[i].MaDienThoai == madienthoai) break;
-
+                   
             if (i < list.Count)
             {
                 DienThoai dt = new DienThoai(list[i]);
